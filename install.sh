@@ -30,10 +30,14 @@ echo "done"
 
 
 #calebstewars pwncat
-su penelope
+
 cd /home/penelope/tools/ && \
-pip install git+https://github.com/calebstewart/pwncat.git
-sudo su
+git clone https://github.com/calebstewart/pwncat.git
+cd pwncat
+python setup.py install
+pip install -U git+https://github.com/calebstewart/paramiko
+cd /home/penelope/tools/
+
 ## wpscan
 echo "installing wpscan"
 git clone https://github.com/wpscanteam/wpscan.git
@@ -103,6 +107,15 @@ cd /home/penelope/tools/
 
  git clone https://github.com/blechschmidt/massdns.git
  cd /home/penelope/tools/
+
+#dnmasscan
+
+git clone https://github.com/rastating/dnmasscan.git
+cd dnmasscan
+chmod +x dnmasscan
+ln -s /home/penelope/tools/dnmasscan/dnmasscan /home/penelope/PATH
+cd /home/penelope/tools/
+
 # yay
 
 git clone https://aur.archlinux.org/yay-git.git
@@ -148,12 +161,30 @@ cd github-subdomains
 go install
 cd /home/penelope/tools/
 
+#Markdown-PP
+
+git clone https://github.com/jreese/markdown-pp.git
+cd markdown-pp
+pip install Markdown-PP
+cd /home/penelope/tools/
+
 # m4ll0k tools
 git clone https://github.com/m4ll0k/Bug-Bounty-Toolz.git
 cd /home/penelope/Bug-Bounty-Toolz
 ln -s  /home/penelope/tools/Bug-Bounty-Toolz/getrelationship.py /home/penelope/PATH
+# gdorklinks.sh ~ jhaddix
+
+cd /home/penelope/PATH
+wget https://gist.githubusercontent.com/jhaddix/1fb7ab2409ab579178d2a79959909b33/raw/e9fea4c0f6982546d90d241bc3e19627a7083e5e/Gdorklinks.sh
+mv Gdorklinks.sh gdorklinks
+chmod +x gdorklinks
+cd /home/penelope/tools/
 
 cd /home/penelope/tools/
 ## GRANTING 755 PERMISSIONS ON ALL FILES IN PATH
 chmod -R 755 /home/penelope/tools
 echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in ~/tools"
+
+# js-beautify
+
+npm -g install js-beautify
