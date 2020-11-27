@@ -106,7 +106,10 @@ cd /home/penelope/tools/
 # massdns
 
  git clone https://github.com/blechschmidt/massdns.git
+ cd massdns
+ make
  cd /home/penelope/tools/
+
 
 #dnmasscan
 
@@ -114,6 +117,23 @@ git clone https://github.com/rastating/dnmasscan.git
 cd dnmasscan
 chmod +x dnmasscan
 ln -s /home/penelope/tools/dnmasscan/dnmasscan /home/penelope/PATH
+cd /home/penelope/tools/
+
+
+# masscan
+
+git clone https://github.com/hduarte/masscan.git
+cd masscan
+make
+cd /home/penelope/tools/
+
+# LiveTargetsFinder
+
+git clone https://github.com/brownsec/LiveTargetsFinder.git
+cd LiveTargetsFinder
+sudo pip3 install -r requirements.txt
+chmod +x liveTargetsFinder.py
+ln -s /home/penelope/tools/LiveTargetsFinder/liveTargetsFinder.py /home/penelope/PATH
 cd /home/penelope/tools/
 
 # yay
