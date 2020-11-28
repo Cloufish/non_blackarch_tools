@@ -36,12 +36,9 @@ cd /home/penelope/tools/
 
 npm -g --force install js-beautify
 
-# NON-ROOT INSTALLATIONS
 
-exec sudo -u penelope /bin/sh - << EOF
 cd /home/penelope/tools
 echo "This will be run from user $UID"
-
 git clone https://github.com/Cloufish/recon_profile.git
 cd recon_profile
 cat zprofile >> /home/penelope/.zprofile
@@ -126,7 +123,7 @@ cd /home/penelope/tools/
 
  git clone https://github.com/blechschmidt/massdns.git
  cd massdns
- make
+ makepkg --asroot
  cd /home/penelope/tools/
 
 
@@ -143,14 +140,14 @@ cd /home/penelope/tools/
 
 git clone https://github.com/hduarte/masscan.git
 cd masscan
-make
+makepkg --asroot
 cd /home/penelope/tools/
 
 # yay
 
 git clone https://aur.archlinux.org/yay-git.git
 cd yay-git
-makepkg -si
+makepkg -si --asroot
 cd /home/penelope/tools/
 # nuclei-templates
 
