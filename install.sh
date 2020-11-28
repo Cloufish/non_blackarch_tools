@@ -2,11 +2,14 @@
 
 
 #ROOT INSTALLATIONS
+mkdir /home/penelope/tools
+cd /home/penelope/tools/
+
 
 echo "installing JSParser"
 git clone https://github.com/nahamsec/JSParser.git
 cd JSParser*
-su -c "python setup.py install"
+python setup.py install
 chmod +x /home/penelope/tools/JSParser/handler.py
 ln -s  /home/penelope/tools/JSParser/handler.py /home/penelope/PATH
 cd /home/penelope/tools/
@@ -17,13 +20,13 @@ echo "done"
 cd /home/penelope/tools/ && \
 git clone https://github.com/calebstewart/pwncat.git
 cd pwncat
-su -c "python setup.py install"
+python setup.py install
 pip install -U git+https://github.com/calebstewart/paramiko
 cd /home/penelope/tools/
 
 # js-beautify
 
-su -c "npm -g install js-beautify"
+npm -g --force install js-beautify
 
 # NON-ROOT INSTALLATIONS
 
