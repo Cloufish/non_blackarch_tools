@@ -30,7 +30,7 @@ npm -g --force install js-beautify
 
 # NON-ROOT INSTALLATIONS
 
-sudo -u penelope -H sh -c "
+sudo -i -u penelope bash << EOF
 echo "This will be run from user $UID"
 
 git clone https://github.com/Cloufish/recon_profile.git
@@ -208,4 +208,3 @@ cd /home/penelope/tools/
 chmod -R 755 /home/penelope/tools
 echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in ~/tools"
 
-"
