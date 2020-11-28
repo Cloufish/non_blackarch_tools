@@ -2,8 +2,9 @@
 
 
 #ROOT INSTALLATIONS
+#create a tools folder in ~/
 mkdir /home/penelope/tools
-cd /home/penelope/tools/
+cd /home/penelope/tools
 
 
 echo "installing JSParser"
@@ -24,13 +25,21 @@ python setup.py install
 pip install -U git+https://github.com/calebstewart/paramiko
 cd /home/penelope/tools/
 
+# Wappalyzer
+git clone https://github.com/aliasio/wappalyzer
+cd wappalyzer
+yarn install
+yarn run link
+cd /home/penelope/tools/
+
 # js-beautify
 
 npm -g --force install js-beautify
 
 # NON-ROOT INSTALLATIONS
 
-sudo -i -u penelope bash << EOF
+exec sudo -u penelope /bin/sh - << EOF
+cd /home/penelope/tools
 echo "This will be run from user $UID"
 
 git clone https://github.com/Cloufish/recon_profile.git
@@ -43,9 +52,7 @@ cd /home/penelope/tools/
 echo "done"
 
 
-#create a tools folder in ~/
-mkdir /home/penelope/tools
-cd /home/penelope/tools
+
 # gwen001 github-search
 cd /home/penelope/tools && \
 git clone https://github.com/gwen001/github-search.git
@@ -162,13 +169,6 @@ wget https://github.com/KathanP19/HowToHunt/raw/master/CheckList/Web_Checklist_b
 wget https://raw.githubusercontent.com/KathanP19/HowToHunt/master/CheckList/Web-Application-Pentesting-checklist.md
 cd /home/penelope/tools/
 
-
-# Wappalyzer
-git clone https://github.com/aliasio/wappalyzer
-cd wappalyzer
-yarn install
-yarn run link
-cd /home/penelope/tools/
 
 # SubDomanizer v2
 
