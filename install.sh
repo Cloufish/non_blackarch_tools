@@ -14,7 +14,7 @@ echo "done"
 mkdir /home/penelope/tools
 cd /home/penelope/tools
 # gwen001 github-search
-cd $HOME/tools && \
+cd /home/penelope/tools && \
 git clone https://github.com/gwen001/github-search.git
 chmod +x /home/penelope/tools/github-search/
 # cp ~/tools/github-search/ /home/penelope/PATH
@@ -22,8 +22,8 @@ chmod +x /home/penelope/tools/github-search/
 echo "installing JSParser"
 git clone https://github.com/nahamsec/JSParser.git
 cd JSParser*
-python setup.py install
-chmod +x/home/penelope/tools/JSParser/handler.py
+su -c "python setup.py install"
+chmod +x /home/penelope/tools/JSParser/handler.py
 ln -s  /home/penelope/tools/JSParser/handler.py /home/penelope/PATH
 cd /home/penelope/tools/
 echo "done"
@@ -34,7 +34,7 @@ echo "done"
 cd /home/penelope/tools/ && \
 git clone https://github.com/calebstewart/pwncat.git
 cd pwncat
-python setup.py install
+su -c "python setup.py install"
 pip install -U git+https://github.com/calebstewart/paramiko
 cd /home/penelope/tools/
 
