@@ -17,7 +17,7 @@ echo "done"
 
 #calebstewars pwncat
 
-cd /home/penelope/tools/ && \
+cd /home/penelope/tools/
 git clone https://github.com/calebstewart/pwncat.git
 cd pwncat
 python setup.py install
@@ -33,7 +33,7 @@ npm -g --force install js-beautify
 if [ $UID -eq 0 ]; then
   user=penelope
   shift 2     # if you need some other parameters
-  exec su "$user" "$0" -- "$@"
+  exec su "$user"
   # nothing will be executed beyond that line,
   # because exec replaces running process with the new one
 fi
