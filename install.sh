@@ -58,9 +58,6 @@ ln -s /home/penelope/tools/dirsearch/dirsearch.py /home/penelope/PATH
 cd /home/penelope/tools/
 echo "done"
 
-git clone https://github.com/Cloufish/recon.git
-cd /home/penelope/tools/
-
 
 echo "installing asnlookup"
 git clone https://github.com/yassineaboukir/asnlookup.git
@@ -207,4 +204,4 @@ echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in ~/tools"
 
 # js-beautify
 
-npm -g install js-beautify
+su -c "npm -g install js-beautify"
