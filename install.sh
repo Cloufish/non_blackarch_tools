@@ -1,5 +1,42 @@
 #!/bin/bash
 
+
+#ROOT INSTALLATIONS
+
+echo "installing JSParser"
+git clone https://github.com/nahamsec/JSParser.git
+cd JSParser*
+su -c "python setup.py install"
+chmod +x /home/penelope/tools/JSParser/handler.py
+ln -s  /home/penelope/tools/JSParser/handler.py /home/penelope/PATH
+cd /home/penelope/tools/
+echo "done"
+
+#calebstewars pwncat
+
+cd /home/penelope/tools/ && \
+git clone https://github.com/calebstewart/pwncat.git
+cd pwncat
+su -c "python setup.py install"
+pip install -U git+https://github.com/calebstewart/paramiko
+cd /home/penelope/tools/
+
+# js-beautify
+
+su -c "npm -g install js-beautify"
+
+# NON-ROOT INSTALLATIONS
+
+if [ $UID -eq 0 ]; then
+  user=penelope
+  shift 2     # if you need some other parameters
+  exec su "$user" "$0" -- "$@"
+  # nothing will be executed beyond that line,
+  # because exec replaces running process with the new one
+fi
+
+echo "This will be run from user $UID"
+
 git clone https://github.com/Cloufish/recon_profile.git
 cd recon_profile
 cat zprofile >> /home/penelope/.zprofile
@@ -19,24 +56,6 @@ git clone https://github.com/gwen001/github-search.git
 chmod +x /home/penelope/tools/github-search/
 # cp ~/tools/github-search/ /home/penelope/PATH
 
-echo "installing JSParser"
-git clone https://github.com/nahamsec/JSParser.git
-cd JSParser*
-su -c "python setup.py install"
-chmod +x /home/penelope/tools/JSParser/handler.py
-ln -s  /home/penelope/tools/JSParser/handler.py /home/penelope/PATH
-cd /home/penelope/tools/
-echo "done"
-
-
-#calebstewars pwncat
-
-cd /home/penelope/tools/ && \
-git clone https://github.com/calebstewart/pwncat.git
-cd pwncat
-su -c "python setup.py install"
-pip install -U git+https://github.com/calebstewart/paramiko
-cd /home/penelope/tools/
 
 ## wpscan
 echo "installing wpscan"
@@ -124,15 +143,6 @@ cd masscan
 make
 cd /home/penelope/tools/
 
-# LiveTargetsFinder
-
-git clone https://github.com/brownsec/LiveTargetsFinder.git
-cd LiveTargetsFinder
-sudo pip3 install -r requirements.txt
-chmod +x liveTargetsFinder.py
-ln -s /home/penelope/tools/LiveTargetsFinder/liveTargetsFinder.py /home/penelope/PATH
-cd /home/penelope/tools/
-
 # yay
 
 git clone https://aur.archlinux.org/yay-git.git
@@ -202,6 +212,3 @@ cd /home/penelope/tools/
 chmod -R 755 /home/penelope/tools
 echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in ~/tools"
 
-# js-beautify
-
-su -c "npm -g install js-beautify"
