@@ -9,7 +9,7 @@ cd /home/penelope/tools
 
 echo "installing JSParser"
 git clone https://github.com/nahamsec/JSParser.git
-cd JSParser*
+cd JSParser
 python setup.py install
 chmod +x /home/penelope/tools/JSParser/handler.py
 ln -s  /home/penelope/tools/JSParser/handler.py /home/penelope/PATH
@@ -35,9 +35,9 @@ cd /home/penelope/tools/
 # js-beautify
 
 npm -g --force install js-beautify
-
-
 cd /home/penelope/tools
+
+
 echo "This will be run from user $UID"
 git clone https://github.com/Cloufish/recon_profile.git
 cd recon_profile
@@ -60,7 +60,7 @@ chmod +x /home/penelope/tools/github-search/
 ## wpscan
 echo "installing wpscan"
 git clone https://github.com/wpscanteam/wpscan.git
-cd wpscan*
+cd wpscan
 gem install bundler && bundle install --without test
 cd /home/penelope/tools/
 echo "done"
@@ -123,7 +123,7 @@ cd /home/penelope/tools/
 
  git clone https://github.com/blechschmidt/massdns.git
  cd massdns
- makepkg --asroot
+ su -c make penelope
  cd /home/penelope/tools/
 
 
@@ -140,14 +140,14 @@ cd /home/penelope/tools/
 
 git clone https://github.com/hduarte/masscan.git
 cd masscan
-makepkg --asroot
+su -c make penelope
 cd /home/penelope/tools/
 
 # yay
 
 git clone https://aur.archlinux.org/yay-git.git
 cd yay-git
-makepkg -si --asroot
+su -c make penelope
 cd /home/penelope/tools/
 # nuclei-templates
 
