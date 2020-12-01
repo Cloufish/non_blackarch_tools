@@ -116,7 +116,7 @@ cd /home/penelope/tools/
  source env/bin/activate
  python3 -m pip install mmh3
  chmod +x /home/penelope/tools/FavFreak/favfreak.py
- cp /home/penelope/tools/FavFreak/favfreak.py /home/penelope/PATH
+ ln -s /home/penelope/tools/FavFreak/favfreak.py /home/penelope/PATH
  cd /home/penelope/tools/
 
 # massdns
@@ -138,7 +138,7 @@ cd /home/penelope/tools/
 
 # masscan
 
-git clone https://github.com/hduarte/masscan.git
+git https://github.com/robertdavidgraham/masscan.git
 cd masscan
 su -c make penelope
 cd /home/penelope/tools/
@@ -172,7 +172,7 @@ cd /home/penelope/tools/
 git clone https://github.com/nsonaniya2010/SubDomainizer.git
 cd SubDomainizer
 pip3 install -r requirements.txt
-ln -s /home/penelope/tools/SubDomainizer/SubDomainizer.py /home/penelepe/PATH
+ln -s /home/penelope/tools/SubDomainizer/SubDomainizer.py /home/penelope/PATH
 cd /home/penelope/tools/
 # github-subdomains
 
