@@ -18,12 +18,9 @@ echo "done"
 
 #calebstewars pwncat
 
-cd /home/penelope/tools/
-git clone https://github.com/calebstewart/pwncat.git
-cd pwncat
-python setup.py install
+pip install git+https://github.com/calebstewart/pwncat.git
 pip install -U git+https://github.com/calebstewart/paramiko
-cd /home/penelope/tools/
+pip install base64io
 
 # Wappalyzer
 git clone https://github.com/aliasio/wappalyzer
@@ -199,7 +196,9 @@ wget https://gist.githubusercontent.com/jhaddix/1fb7ab2409ab579178d2a79959909b33
 mv Gdorklinks.sh gdorklinks
 chmod +x gdorklinks
 cd /home/penelope/tools/
-
+# enum4linux
+wget https://raw.githubusercontent.com/CiscoCXSecurity/enum4linux/master/enum4linux.pl -O /home/penelope/PATH
+sudo touch /etc/samba/smb.conf
 cd /home/penelope/tools/
 ## GRANTING 755 PERMISSIONS ON ALL FILES IN PATH
 chmod -R 755 /home/penelope/tools
