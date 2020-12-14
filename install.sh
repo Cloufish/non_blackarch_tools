@@ -99,14 +99,6 @@ echo "done"
 
 #searchsploit -u TOO MUCH TIME TO UPDATE AND TOO MUCH STORAGE IT TAKES, do it on your own if you want to
 
-# Metasploit by rapid7
-mkdir /home/penelope/tools/metasploit
-cd /home/penelope/tools/metasploit
-curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
-chmod 755 msfinstall
-./msfinstall
-msfdb init
-
 # nuklei
 git clone https://github.com/projectdiscovery/nuclei.git &&
 cd nuclei/v2/cmd/nuclei/ &&
@@ -147,7 +139,7 @@ cd /home/penelope/tools/
 
 # masscan
 
-git https://github.com/robertdavidgraham/masscan.git
+git clone https://github.com/robertdavidgraham/masscan.git
 cd masscan
 su -c make penelope
 cd /home/penelope/tools/
@@ -165,6 +157,7 @@ cd /home/penelope/tools/
 
 #LinPeas, WinPeas
  git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git
+ mv privilege-escalation-awesome-scripts-suite privesc
  cd /home/penelope/tools/
 
 #Bug bounty checklists
@@ -212,8 +205,12 @@ cd /home/penelope/tools/
 wget https://raw.githubusercontent.com/CiscoCXSecurity/enum4linux/master/enum4linux.pl -O /home/penelope/PATH/enum4linux
 sudo touch /etc/samba/smb.conf
 cd /home/penelope/tools/
+
 ## GRANTING 755 PERMISSIONS ON ALL FILES IN PATH
+chown -R penelope /home/penelope/tools
 chmod -R 755 /home/penelope/tools
+chown -R penelope /home/penelope/PATH
 chmod -R 755 /home/penelope/PATH
 echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in ~/tools"
 
+## Editing 
