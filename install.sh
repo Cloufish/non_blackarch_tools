@@ -208,9 +208,9 @@ sudo touch /etc/samba/smb.conf
 cd /home/penelope/tools/
 
 ## GRANTING 755 PERMISSIONS ON ALL FILES IN PATH
-chown -R penelope /home/penelope/tools
+#chown -R penelope /home/penelope/tools
 chmod -R 755 /home/penelope/tools
-chown -R penelope /home/penelope/PATH
+#chown -R penelope /home/penelope/PATH #Takes too much space for Docker container
 chmod -R 755 /home/penelope/PATH
 echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in ~/tools"
 
