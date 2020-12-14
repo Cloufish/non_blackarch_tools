@@ -97,7 +97,8 @@ echo "done"
 
 #searchsploit database
 
-#searchsploit -u TOO MUCH TIME TO UPDATE AND TOO MUCH STORAGE IT TAKES, do it on your own if you want to
+searchsploit -u #TOO MUCH STORAGE IT TAKES, you can disable it if you don't use searchsploit and you're just googling
+msfdb-blackarch init
 
 # nuklei
 git clone https://github.com/projectdiscovery/nuclei.git &&
