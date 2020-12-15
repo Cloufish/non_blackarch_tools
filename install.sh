@@ -86,19 +86,36 @@ echo "done"
 
 
 
-echo "downloading Seclists"
-cd /home/penelope/tools/
-git clone https://github.com/danielmiessler/SecLists.git
-cd /home/penelope/tools/SecLists/Discovery/DNS/
+#echo "downloading Seclists"
+#cd /home/penelope/tools/
+#git clone https://github.com/danielmiessler/SecLists.git
+#cd /home/penelope/tools/SecLists/Discovery/DNS/
 ##THIS FILE BREAKS MASSDNS AND NEEDS TO BE CLEANED
-cat dns-Jhaddix.txt | head -n -14 > clean-jhaddix-dns.txt
-cd /home/penelope/tools/
-echo "done"
 
+# Setting up wordlists
+mkdir /home/penelope/tools/SecLists
+cd /home/penelope/tools/SecLists
+mkdir Directory-Bruting
+cd Directory-Bruting
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/directory-list-2.3-small.txt
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/directory-list-2.3-medium.txt
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/directory-list-2.3-big.txt
+cd ..
+mkdir Passwords
+cd Passwords 
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/xato-net-10-million-passwords-1000.txt
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/xato-net-10-million-passwords-10000.txt
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/xato-net-10-million-passwords-100000.txt
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/xato-net-10-million-passwords-1000000.txt
+cd ..
+mkdir Usernames
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Usernames/xato-net-10-million-usernames-dup.txt -O ./xato-net-10-million-usernames-medium.txt
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Usernames/xato-net-10-million-usernames.txt
+cd /home/penelope/tools
 #searchsploit database
 
-searchsploit -u #TOO MUCH STORAGE IT TAKES, you can disable it if you don't use searchsploit and you're just googling
-msfdb-blackarch init
+#searchsploit -u #TOO MUCH STORAGE IT TAKES, you can disable it if you don't use searchsploit and you're just googling
+#msfdb-blackarch init
 
 # nuklei
 git clone https://github.com/projectdiscovery/nuclei.git &&
