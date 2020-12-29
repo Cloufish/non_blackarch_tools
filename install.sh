@@ -12,7 +12,7 @@ git clone https://github.com/nahamsec/JSParser.git
 cd JSParser
 python setup.py install
 chmod +x /home/penelope/tools/JSParser/handler.py
-ln -s  /home/penelope/tools/JSParser/handler.py /home/penelope/PATH
+ln /home/penelope/tools/JSParser/handler.py /home/penelope/PATH
 cd /home/penelope/tools/
 echo "done"
 
@@ -70,7 +70,7 @@ cd /home/penelope/tools/
 echo "installing dirsearch"
 git clone https://github.com/maurosoria/dirsearch.git
 chmod +x /home/penelope/tools/dirsearch/dirsearch.py
-ln -s /home/penelope/tools/dirsearch/dirsearch.py /home/penelope/PATH
+ln /home/penelope/tools/dirsearch/dirsearch.py /home/penelope/PATH
 cd /home/penelope/tools/
 echo "done"
 
@@ -80,7 +80,7 @@ git clone https://github.com/yassineaboukir/asnlookup.git
 cd /home/penelope/tools/asnlookup
 pip install -r requirements.txt
 chmod +x /home/penelope/tools/asnlookup/asnlookup.py
-ln -s /home/penelope/tools/asnlookup/asnlookup.py /home/penelope/PATH
+ln /home/penelope/tools/asnlookup/asnlookup.py /home/penelope/PATH
 cd /home/penelope/tools/
 echo "done"
 
@@ -107,6 +107,7 @@ wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/xato-net-10-million-passwords-10000.txt
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/xato-net-10-million-passwords-100000.txt
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/xato-net-10-million-passwords-1000000.txt
+wget https://www.scrapmaker.com/data/wordlists/dictionaries/rockyou.txt
 cd ..
 mkdir Usernames
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Usernames/xato-net-10-million-usernames-dup.txt -O ./xato-net-10-million-usernames-medium.txt
@@ -114,7 +115,7 @@ wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Usernames/
 cd /home/penelope/tools
 #searchsploit database
 
-#searchsploit -u #TOO MUCH STORAGE IT TAKES, you can disable it if you don't use searchsploit and you're just googling
+searchsploit -u #TOO MUCH STORAGE IT TAKES, you can disable it if you don't use searchsploit and you're just googling exploits yourself
 #msfdb-blackarch init
 
 # nuklei
@@ -122,7 +123,7 @@ git clone https://github.com/projectdiscovery/nuclei.git &&
 cd nuclei/v2/cmd/nuclei/ &&
 go build &&
 chmod +x /home/penelope/tools/nuclei/v2/cmd/nuclei/nuclei
-ln -s /home/penelope/tools/nuclei/v2/cmd/nuclei/nuclei /home/penelope/PATH
+ln /home/penelope/tools/nuclei/v2/cmd/nuclei/nuclei /home/penelope/PATH
 cd /home/penelope/tools/
 git clone https://github.com/projectdiscovery/nuclei-templates.git
 cd /home/penelope/tools/
@@ -135,7 +136,7 @@ cd /home/penelope/tools/
  source env/bin/activate
  python3 -m pip install mmh3
  chmod +x /home/penelope/tools/FavFreak/favfreak.py
- ln -s /home/penelope/tools/FavFreak/favfreak.py /home/penelope/PATH
+ ln /home/penelope/tools/FavFreak/favfreak.py /home/penelope/PATH
  cd /home/penelope/tools/
 
 # massdns
@@ -151,7 +152,7 @@ cd /home/penelope/tools/
 git clone https://github.com/rastating/dnmasscan.git
 cd dnmasscan
 chmod +x dnmasscan
-ln -s /home/penelope/tools/dnmasscan/dnmasscan /home/penelope/PATH
+ln /home/penelope/tools/dnmasscan/dnmasscan /home/penelope/PATH
 cd /home/penelope/tools/
 
 
@@ -173,10 +174,13 @@ cd /home/penelope/tools/
 git clone https://github.com/projectdiscovery/nuclei-templates.git
 cd /home/penelope/tools/
 
-#LinPeas, WinPeas
+#LinPeas, WinPeas, Linux Exploit suggester-2
  git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git
  mv privilege-escalation-awesome-scripts-suite privesc
+ cd privesc
+ wget https://raw.githubusercontent.com/jondonas/linux-exploit-suggester-2/master/linux-exploit-suggester-2.pl
  cd /home/penelope/tools/
+
 
 #Bug bounty checklists
 
@@ -187,12 +191,17 @@ wget https://raw.githubusercontent.com/KathanP19/HowToHunt/master/CheckList/Web-
 cd /home/penelope/tools/
 
 
+# bpython and other modules 
+
+pip install bpython requests beautifulsoup4 lxml
+
+
 # SubDomanizer v2
 
 git clone https://github.com/nsonaniya2010/SubDomainizer.git
 cd SubDomainizer
 pip3 install -r requirements.txt
-ln -s /home/penelope/tools/SubDomainizer/SubDomainizer.py /home/penelope/PATH
+ln /home/penelope/tools/SubDomainizer/SubDomainizer.py /home/penelope/PATH
 cd /home/penelope/tools/
 # github-subdomains
 
@@ -205,13 +214,13 @@ cd /home/penelope/tools/
 
 git clone https://github.com/jreese/markdown-pp.git
 cd markdown-pp
-pip install Markdown-PP
+pip install MarkdownPP
 cd /home/penelope/tools/
 
 # m4ll0k tools
 git clone https://github.com/m4ll0k/Bug-Bounty-Toolz.git
 cd /home/penelope/Bug-Bounty-Toolz
-ln -s  /home/penelope/tools/Bug-Bounty-Toolz/getrelationship.py /home/penelope/PATH
+ln /home/penelope/tools/Bug-Bounty-Toolz/getrelationship.py /home/penelope/PATH
 # gdorklinks.sh ~ jhaddix
 
 cd /home/penelope/PATH
