@@ -221,7 +221,26 @@ cd /home/penelope/tools/
 git clone https://github.com/m4ll0k/Bug-Bounty-Toolz.git
 cd /home/penelope/Bug-Bounty-Toolz
 ln /home/penelope/tools/Bug-Bounty-Toolz/getrelationship.py /home/penelope/PATH
+cd /home/penelope/tools/
+
 # gdorklinks.sh ~ jhaddix
+
+#My-Tools
+	#bug bounty framework 
+	git clone https://github.com/Cloufish/bug_bounty_framework.git
+	cd bug_bounty_framework
+	ln web_recon.sh /home/penelope/PATH
+	ln markdown_converter.sh /home/penelope/PATH
+	cd /home/penelope/tools/
+
+	# HTB_automation
+	git clone https://github.com/Cloufish/HTB_automation.git
+	cd HTB_automation
+	ln htb_recon.sh /home/penelope/PATH
+	ln htb_converter_to_markdown.sh /home/penelope/PATH
+	cd /home/penelope/tools/
+
+
 
 cd /home/penelope/PATH
 wget https://gist.githubusercontent.com/jhaddix/1fb7ab2409ab579178d2a79959909b33/raw/e9fea4c0f6982546d90d241bc3e19627a7083e5e/Gdorklinks.sh
