@@ -115,7 +115,7 @@ wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Usernames/
 cd /home/penelope/tools
 #searchsploit database
 
-searchsploit -u #TOO MUCH STORAGE IT TAKES, you can disable it if you don't use searchsploit and you're just googling exploits yourself
+#searchsploit -u #TOO MUCH STORAGE IT TAKES, you can disable it if you don't use searchsploit and you're just googling exploits yourself
 #msfdb-blackarch init
 
 # nuklei
