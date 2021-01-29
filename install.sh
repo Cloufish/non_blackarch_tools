@@ -84,7 +84,12 @@ ln /home/penelope/tools/asnlookup/asnlookup.py /home/penelope/PATH
 cd /home/penelope/tools/
 echo "done"
 
-
+#impacket DO SETUP IT WE NEED SUDO PRIVILEGES TO ACCESS /usr and other root directories. Because of that this script doesn't install this tool
+#git clone https://github.com/SecureAuthCorp/impacket.git
+#cd impacket
+#pip3 install -r requirements.txt
+#python3 ./setup.py install
+#cd /home/penelope/tools/
 
 #echo "downloading Seclists"
 #cd /home/penelope/tools/
@@ -100,14 +105,17 @@ cd Directory-Bruting
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/directory-list-2.3-small.txt
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/directory-list-2.3-medium.txt
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/directory-list-2.3-big.txt
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-small-directories.txt
 cd ..
 mkdir Passwords
+
 cd Passwords 
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/xato-net-10-million-passwords-1000.txt
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/xato-net-10-million-passwords-10000.txt
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/xato-net-10-million-passwords-100000.txt
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/xato-net-10-million-passwords-1000000.txt
-wget https://www.scrapmaker.com/data/wordlists/dictionaries/rockyou.txt
+wget https://gitlab.com/kalilinux/packages/wordlists/-/raw/kali/master/rockyou.txt.gz
+gunzip rockyou.txt.gz
 cd ..
 mkdir Usernames
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Usernames/xato-net-10-million-usernames-dup.txt -O ./xato-net-10-million-usernames-medium.txt
@@ -169,6 +177,13 @@ git clone https://aur.archlinux.org/yay-git.git
 cd yay-git
 su -c make penelope
 cd /home/penelope/tools/
+
+# polenum
+
+cd /home/penelope/PATH
+wget https://raw.githubusercontent.com/Wh1t3Fox/polenum/master/polenum.py
+cd /home/penelope/tools/
+
 # nuclei-templates
 
 git clone https://github.com/projectdiscovery/nuclei-templates.git
@@ -249,13 +264,13 @@ chmod +x gdorklinks
 cd /home/penelope/tools/
 # enum4linux
 wget https://raw.githubusercontent.com/CiscoCXSecurity/enum4linux/master/enum4linux.pl -O /home/penelope/PATH/enum4linux
-sudo touch /etc/samba/smb.conf
+touch /etc/samba/smb.conf
 cd /home/penelope/tools/
 
 ## GRANTING 755 PERMISSIONS ON ALL FILES IN PATH
-#chown -R penelope /home/penelope/tools
+chown -R penelope /home/penelope/tools
 chmod -R 755 /home/penelope/tools
-#chown -R penelope /home/penelope/PATH #Takes too much space for Docker container
+chown -R penelope /home/penelope/PATH #Takes too much space for Docker container
 chmod -R 755 /home/penelope/PATH
 echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in ~/tools"
 
