@@ -243,14 +243,12 @@ cd /home/penelope/tools/ || { echo "Failure in cd command"; exit 1; }
 
 # m4ll0k tools
 git clone https://github.com/m4ll0k/Bug-Bounty-Toolz.git
-cd /home/penelope/Bug-Bounty-Toolz || { echo "Failure in cd command"; exit 1; }
+cd /home/penelope/tools/Bug-Bounty-Toolz || { echo "Failure in cd command"; exit 1; }
 for script in ./*.sh; do
 
   ln $PWD/${script} /home/penelope/PATH
 
 done;
-ln /home/penelope/tools/Bug-Bounty-Toolz/getsrc.py  /home/penelope/PATH
-ln /home/penelope/tools/Bug-Bounty-Toolz/getrelationship.py /home/penelope/PATH
 cd /home/penelope/tools/ || { echo "Failure in cd command"; exit 1; }
 
 # gdorklinks.sh ~ jhaddix
@@ -258,7 +256,7 @@ cd /home/penelope/tools/ || { echo "Failure in cd command"; exit 1; }
 #My-Tools
 	#bug bounty framework
 	git clone https://github.com/Cloufish/bug_bounty_framework.git
-	cd bug_bounty_framework || { echo "Failure in cd command"; exit 1; }
+	cd /home/penelope/tools/bug_bounty_framework || { echo "Failure in cd command"; exit 1; }
 
   for script in ./*.sh; do
 
