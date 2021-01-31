@@ -28,7 +28,7 @@ echo '\n'
 echo 'blackarch' | figlet -f slant | lolcat
 
   printf "	%s       %s     %s  __   %s " $RAINBOW $RESET; printf  "${YELLOW} Image Created by: ${BLUE}Cloufish \n $RESET"
-  printf "	%s  ____  %s_____%s/ /_  %s " $RAINBOW $RESET; printf "${YELLOW} See ${BOLD} Documentation: WORK-IN-PROGRESS \n $RESET"
+  printf "	%s  ____  %s_____%s/ /_  %s " $RAINBOW $RESET; printf "${YELLOW} See ${BOLD} Documentation: *WIP* \n $RESET"
   printf "	%s /_  / %s/ ___/%s __ \ %s\n " $RAINBOW $RESET
   printf "	%s  / /_%s(__  )%s / / / %s\n " $RAINBOW $RESET
   printf "	%s /___/%s____/%s_/ /_/  %s\n " $RAINBOW $RESET
